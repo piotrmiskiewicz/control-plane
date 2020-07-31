@@ -54,3 +54,7 @@ data:
 ```  
     
 This ConfigMap activates a global override for all plans except SKRs provisioned with a special plan marked as `lite`.
+
+## Trial plan
+
+A trial plan uses defualt Kyma

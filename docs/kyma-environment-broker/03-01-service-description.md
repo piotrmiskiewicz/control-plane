@@ -9,10 +9,14 @@ Currently, KEB ServiceClass provides one ServicePlan that allows you to provisio
 | Plan name | Description |
 |-----------|-------------|
 | `azure` | Installs Kyma Runtime on the Azure cluster. |
+| `gcp` | Installs Kyma Runtime on the GCP cluster. |
+| `azure_lite` | Installs Kyma Runtime on the Azure cluster with reduced resource usage. |
+| `gcp_trial` | Installs trial Kyma Runtime on the GCP cluster. |
+| `azure_trial` | Installs trial Kyma Runtime on the Azure cluster. |
 
 ## Provisioning parameters
 
-These are the provisioning parameters for this plan:
+These are the provisioning parameters for GCP and Azure plan:
 
 | Parameter Name | Type | Description | Required | Default value |
 |----------------|-------|-------------|:----------:|---------------|
