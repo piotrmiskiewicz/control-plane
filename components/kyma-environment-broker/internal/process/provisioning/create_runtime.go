@@ -53,6 +53,7 @@ func (s *CreateRuntimeStep) Run(operation internal.ProvisioningOperation, log lo
 
 	requestInput, err := s.createProvisionInput(operation, pp)
 	if err != nil {
+		log.Errorf("unable to create provisioning input: %s", err.Error())
 		return s.operationManager.OperationFailed(operation, "invalid operation data - cannot create provisioning input")
 	}
 
