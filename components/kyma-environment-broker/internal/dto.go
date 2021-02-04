@@ -48,6 +48,7 @@ const Azure TrialCloudProvider = "Azure"
 
 type ProvisioningParametersDTO struct {
 	Name         string  `json:"name"`
+	UserEmail    string  `json:"user_email"`
 	TargetSecret *string `json:"targetSecret"`
 	VolumeSizeGb *int    `json:"volumeSizeGb"`
 	MachineType  *string `json:"machineType"`

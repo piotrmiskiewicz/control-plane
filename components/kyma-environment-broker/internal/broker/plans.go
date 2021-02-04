@@ -75,6 +75,7 @@ type RootSchema struct {
 type ProvisioningProperties struct {
 	Components     Type `json:"components"`
 	Name           Type `json:"name"`
+	UserEmail      Type `json:"user_email"`
 	DiskType       Type `json:"diskType"`
 	VolumeSizeGb   Type `json:"volumeSizeGb"`
 	MachineType    Type `json:"machineType"`
@@ -108,6 +109,9 @@ func GCPSchema(machineTypes []string) []byte {
 				UniqueItems:     t,
 			},
 			Name: Type{
+				Type: "string",
+			},
+			UserEmail: Type{
 				Type: "string",
 			},
 			DiskType: Type{Type: "string"},
@@ -206,6 +210,9 @@ func AzureSchema(machineTypes []string) []byte {
 			Name: Type{
 				Type: "string",
 			},
+			UserEmail: Type{
+				Type: "string",
+			},
 			DiskType: Type{Type: "string"},
 			VolumeSizeGb: Type{
 				Type:    "integer",
@@ -255,6 +262,9 @@ func TrialSchema() []byte {
   "type": "object",
   "properties": {
     "name": {
+      "type": "string"
+    },
+    "user_email": {
       "type": "string"
     },
     "region": {
