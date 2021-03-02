@@ -1,7 +1,10 @@
 package storage
 
 import (
+	"bufio"
 	"encoding/json"
+	"fmt"
+	"os"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -68,5 +71,20 @@ func TestNewEncrypter(t *testing.T) {
 		_, err = e.Encrypt(j)
 		require.Error(t, err)
 	})
+}
 
+func TestDecryptValue(t *testing.T) {
+	key := os.Getenv("SECRET_KEY")
+	if key == "" {
+		t.Log("key not provided, skipping")
+	}
+	//r := bufio.NewReader(os.Stdin)
+	//encrypted := r.
+	//e := NewEncrypter(key)
+	decrypted, err := e.Decrypt([]byte(encrypted))
+	if err != nil {
+		t.Fatalf(err.Error())
+	}
+
+	fmt.Println(string(decrypted))
 }
